@@ -6,7 +6,7 @@ int main() {
   int posLinha = 0, posColuna = 0;
   int valor = 1;
   int op = 1;
-  char alfaLinha = 'A', alfaColuna = 'A';
+  char alfa[26] = {};
 
   printf("Informe o numero de linhas => ");
   scanf("%d", &nLinhas);
@@ -18,6 +18,10 @@ int main() {
     for (int j = 0; j < nColunas; j++) {
       matriz[i][j] = 0;
     }
+  }
+
+  for (int i = 0; i < 26; i++) {
+    alfa[i] = 'A' + i;
   }
 
   while (op) {
@@ -50,12 +54,10 @@ int main() {
     }
   }
 
-  while (nLinhas && nColunas) {
-    for (int i = 65; i < 'Z'; i++) {
-      for (int j = 65; j < 'Z'; j++) {
-        printf("\nV(%c)----V(%c)", (char)matriz['A' + 1]['A' + 1],
-               (char)matriz[i][j]);
-      }
+  for (int i = 0; i < nLinhas; i++) {
+    for (int j = 0; j < nColunas; j++) {
+      if (matriz[i][j] == 1)
+        printf("\nV(%c)----V(%c)", alfa[i], alfa[j]);
     }
   }
 
