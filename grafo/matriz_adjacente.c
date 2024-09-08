@@ -1,3 +1,4 @@
+#include <stdbool.h>
 #include <stdio.h>
 
 int main() {
@@ -7,6 +8,7 @@ int main() {
   int valor = 1;
   int op = 1;
   char alfa[26] = {};
+  bool conexo = false;
 
   printf("Informe o numero de linhas => ");
   scanf("%d", &nLinhas);
@@ -56,10 +58,24 @@ int main() {
 
   for (int i = 0; i < nLinhas; i++) {
     for (int j = 0; j < nColunas; j++) {
-      if (matriz[i][j] == 1)
+      if (matriz[i][j] == 1) {
         printf("\nV(%c)----V(%c)", alfa[i], alfa[j]);
+      }
+      if (matriz[i][j] == 1) {
+        if ((matriz[i][j] == matriz[j][i]) == 0) {
+          conexo = false;
+          continue;
+        } else {
+          conexo = true;
+        }
+      }
     }
   }
+
+  if (conexo == 1)
+    printf("\nGrafo conexo");
+  else
+    printf("\nGrafo nao conexo");
 
   printf("\n");
 
