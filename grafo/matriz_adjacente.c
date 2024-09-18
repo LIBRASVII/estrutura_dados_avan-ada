@@ -2,7 +2,7 @@
 #include <stdio.h>
 
 int main() {
-  int matriz[50][50] = {{0}};
+  int matriz[26][26] = {{0}};
   int nLinhas = 0, nColunas = 0;
   int posLinha = 0, posColuna = 0;
   int valor = 1;
